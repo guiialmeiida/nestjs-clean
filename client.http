@@ -1,4 +1,4 @@
-@baseUrl = http://127.0.0.1:3333
+@baseUrl = http://localhost:3333
 @authToken = {{authenticate.response.body.access_token}}
 
 # @name create_account
