@@ -1,11 +1,11 @@
 import { ZodValidationPipe } from '@/pipes/zod-validation-pipe'
 import { PrismaService } from '@/prisma/prisma.service'
 import {
-    Body,
-    Controller,
-    Post,
-    UnauthorizedException,
-    UsePipes,
+  Body,
+  Controller,
+  Post,
+  UnauthorizedException,
+  UsePipes,
 } from '@nestjs/common'
 import { JwtService } from '@nestjs/jwt'
 import { compare } from 'bcryptjs'
