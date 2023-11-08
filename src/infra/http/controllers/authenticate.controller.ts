@@ -1,5 +1,6 @@
 import { AuthenticateStudentUseCase } from '@/domain/forum/application/use-cases/authenticate-student'
 import { WrongCredentialsError } from '@/domain/forum/application/use-cases/errors/wrong-credentials-error'
+import { Public } from '@/infra/auth/public'
 import { ZodValidationPipe } from '@/infra/http/pipes/zod-validation-pipe'
 import {
   BadRequestException,
@@ -23,6 +24,7 @@ export class AuthenticateController {
   constructor(private authenticateStudent: AuthenticateStudentUseCase) {}
 
   @Post()
+  @Public()
   @UsePipes(new ZodValidationPipe(authenticateBodySchema))
   async handle(@Body() body: AuthenticatetBodySchema) {
     const { email, password } = body
